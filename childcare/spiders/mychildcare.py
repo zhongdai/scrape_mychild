@@ -9,10 +9,10 @@ class MychildcareSpider(scrapy.Spider):
     name = "mychildcare"
     allowed_domains = ["ifp.mychild.gov.au"]
     # remove comment for below line to do a quick run
-    # start_urls = ['http://ifp.mychild.gov.au/Search/AZSearch.aspx?Location=Z']
+    start_urls = ['http://ifp.mychild.gov.au/Search/AZSearch.aspx?Location=Z']
 
-    # if use below line, it takes about 2 hours to complete 
-    start_urls = ['http://ifp.mychild.gov.au/Search/AZSearch.aspx?Location=' + alpha for alpha in string.ascii_uppercase[:26]]
+    # if use below line, it takes about 2 hours to complete
+    # start_urls = ['http://ifp.mychild.gov.au/Search/AZSearch.aspx?Location=' + alpha for alpha in string.ascii_uppercase[:26]]
 
     def parse(self, response):
         urls = response.xpath('//ul[@id="AZsuburbList"]/li/a/@href').extract()

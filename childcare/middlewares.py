@@ -6,7 +6,18 @@
 # http://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
+import random
+from .user_agents import agents
+import json
 
+
+class UserAgentMiddleware(object):
+    """ Random change User-Agent for each request """
+
+    def process_request(self, request, spider):
+        agent = random.choice(agents)
+        print('### Agent:'+agent)
+        request.headers['User-Agent'] = agent
 
 class ChildcareSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,

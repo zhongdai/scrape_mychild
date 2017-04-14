@@ -3,7 +3,8 @@
 This is a web spider to collect Child Care information from the website  
 http://ifp.mychild.gov.au/Search/AZSearch.aspx.  
 The code is written with Scrapy framework. It goes through the A to Z and fetch
-the Child Care information.
+the Child Care information.  
+There are about **197k** items.
 
 
 # Data fields
