@@ -1,4 +1,4 @@
-# Scrape Australia Child Care information
+# Collect Australia Child Care information
 
 This is a web spider to collect Child Care information from the website  
 http://ifp.mychild.gov.au/Search/AZSearch.aspx.  
@@ -7,13 +7,13 @@ the Child Care information.
 
 
 # Data fields
-Only fetch basic information for the init version
+Most of Child Care centres have `name`, `type`, and `address`. Other fields will be collected if possible.
 - name
 - type
 - address
-- email
-- phone
-- web
+- *email* (optional)
+- *phone*
+- *web*
 
 
 # How to run?
@@ -24,6 +24,6 @@ scrapy crawl mychildcare -o filename.csv
 This will export the result to `filename.csv`, change it to `filename.json` if you prefer json format.  
 Please refer to th Scrapy project to get more option.  
 
-*Suggestion*
-If you start the program by default, it goes through all letters from A to Z, which takes long time.
-Change the start_url to Z only to avoid that, and quick turn around to fix or verify it.
+>**Suggestion**  
+>If you start the program by default, it goes through all letters from A to Z, which takes long time.
+>Change the start_url to Z only to avoid that, and quick turn around to fix or verify it.
